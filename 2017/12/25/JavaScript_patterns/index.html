@@ -17,6 +17,8 @@
 
 
 
+  <meta name="description" content="JavaScript.patterns 设计模式 笔记"/>
+
 
 
 
@@ -38,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/"/>
+<link rel="canonical" href="http://yoursite.com/2017/12/25/JavaScript_patterns/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -75,7 +77,7 @@
 
 
 
-    <title> 塔塔球球的博客 </title>
+    <title> JavaScript.patterns 设计模式 笔记 - 塔塔球球的博客 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -150,14 +152,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2017/12/25/JavaScript_patterns/">JavaScript.patterns 设计模式 笔记</a>
+          JavaScript.patterns 设计模式 笔记
         
       </h1>
 
@@ -172,14 +172,17 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本要点"><span class="toc-text"><a href="#&#x57FA;&#x672C;&#x8981;&#x70B9;" class="headerlink" title="&#x57FA;&#x672C;&#x8981;&#x70B9;"></a>&#x57FA;&#x672C;&#x8981;&#x70B9;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的分类？"><span class="toc-text"><a href="#&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;&#xFF1F;" class="headerlink" title="&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;&#xFF1F;"></a>&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;&#xFF1F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的分类？-1"><span class="toc-text"><a href="#&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;&#xFF1F;-1" class="headerlink" title="&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;&#xFF1F;"></a>&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;&#xFF1F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#隐式全局变量与全局变量的区别？"><span class="toc-text"><a href="#&#x9690;&#x5F0F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x533A;&#x522B;&#xFF1F;" class="headerlink" title="&#x9690;&#x5F0F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x533A;&#x522B;&#xFF1F;"></a>&#x9690;&#x5F0F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x533A;&#x522B;&#xFF1F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript引擎的“变量提前”，工作过程是怎样的？"><span class="toc-text"><a href="#javascript&#x5F15;&#x64CE;&#x7684;&#x201C;&#x53D8;&#x91CF;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;" class="headerlink" title="javascript&#x5F15;&#x64CE;&#x7684;&#x201C;&#x53D8;&#x91CF;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;"></a>javascript&#x5F15;&#x64CE;&#x7684;&#x201C;&#x53D8;&#x91CF;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTMLCollection对象"><span class="toc-text"><a href="#HTMLCollection&#x5BF9;&#x8C61;" class="headerlink" title="HTMLCollection&#x5BF9;&#x8C61;"></a>HTMLCollection&#x5BF9;&#x8C61;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字转换？"><span class="toc-text"><a href="#&#x6570;&#x5B57;&#x8F6C;&#x6362;&#xFF1F;" class="headerlink" title="&#x6570;&#x5B57;&#x8F6C;&#x6362;&#xFF1F;"></a>&#x6570;&#x5B57;&#x8F6C;&#x6362;&#xFF1F;</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h2 id="基本要点"><a href="#基本要点" class="headerlink" title="基本要点"></a>基本要点</h2><h3 id="对象的分类？"><a href="#对象的分类？" class="headerlink" title="对象的分类？"></a>对象的分类？</h3><p>• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；<br>• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。</p>
+        <h2 id="基本要点"><a href="#基本要点" class="headerlink" title="基本要点"></a>基本要点</h2><h3 id="对象的分类？"><a href="#对象的分类？" class="headerlink" title="对象的分类？"></a>对象的分类？</h3><p>• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；<br>• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。</p>
 <p>本地对象：<br>• 内置对象（比如 Array，Date）；<br>• 自定义对象（var o = {}）。</p>
 <p>宿主对象包含window和所有DOM对象</p>
 <h3 id="对象的分类？-1"><a href="#对象的分类？-1" class="headerlink" title="对象的分类？"></a>对象的分类？</h3><p>JSLint（<a href="http://jslint.com" target="_blank" rel="noopener">http://jslint.com</a> ）是一个 JavaScript 代码质量检测工具。</p>
@@ -195,117 +198,63 @@
 <p>三者的区别：<br>1、后两种方法比parseInt()更快一些；<br>2、“08 hello”这类字符串转换为数字，则必须使用 parseInt()。</p>
 <p>原因：<br>parseInt()是一种“解析”而不是简单的“转换”。</p>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/18/My-New-Post/">hexo 命令</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-18
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
 
-        
-          <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">css</span><br></pre></td></tr></table></figure>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line"></span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-        
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://yoursite.com">塔塔球球</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://yoursite.com/2017/12/25/JavaScript_patterns/">http://yoursite.com/2017/12/25/JavaScript_patterns/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
       
-    </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-    
 
-    
 
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2017/12/18/hello-world/">Hello World</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2017-12-18
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
-
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-      
-    </div>
-
     
 
     
-
-  </article>
-
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
     
-  </section>
-
-  
-  <nav class="pagination">
     
+      <a class="next" href="/2017/12/18/My-New-Post/">
+        <span class="next-text nav-default">hexo 命令</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
+
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -385,6 +334,8 @@
     </div>
 
     
+  
+
 
 
     
