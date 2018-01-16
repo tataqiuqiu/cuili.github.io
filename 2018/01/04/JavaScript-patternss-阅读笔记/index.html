@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript.patterns 设计模式 笔记 | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="TATAQ'S BLOG" />
+  
+  
+  
+  
+  <meta name="description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript.patterns 设计模式 笔记">
+<meta property="og:url" content="http://yoursite.com/2018/01/04/JavaScript-patternss-阅读笔记/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaS">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2018/01/04/JavaScript-patternss-阅读笔记/cover.jpg">
+<meta property="og:updated_time" content="2018-01-05T06:28:54.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript.patterns 设计模式 笔记">
+<meta name="twitter:description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaS">
+<meta name="twitter:image" content="http://yoursite.com/2018/01/04/JavaScript-patternss-阅读笔记/cover.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/fashion.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" rel="home" >
+                <img style="margin-bottom: 10px;"  width="124px" height="124px" alt="Hike News" src="http://p9.qhimg.com/d/inn/01482a8e/80104173252_11.jpg">
+              </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">tataqiuqiu&#39;s blog</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">首页</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">归档</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">分类</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">标签</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">关于</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-JavaScript-patternss-阅读笔记" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JavaScript.patterns 设计模式 笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/01/04/JavaScript-patternss-阅读笔记/" class="article-date">
+	  <time datetime="2018-01-04T09:06:21.000Z" itemprop="datePublished">一月 4, 2018</time>
+	</a>
+
+       
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a class="fancybox" href="cover.jpg" title="书封面"><img src="cover.jpg" alt="书封面">
+<h2 id="一、基本要点"><a href="#一、基本要点" class="headerlink" title="一、基本要点"></a>一、基本要点</h2><h3 id="1、对象的分类"><a href="#1、对象的分类" class="headerlink" title="1、对象的分类"></a>1、对象的分类</h3><p>• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；<br>• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。</p>
+<p>本地对象：<br>• 内置对象（比如 Array，Date）；<br>• 自定义对象（var o = {}）。</p>
+<p>宿主对象包含window和所有DOM对象</p>
+<h3 id="2、代码质量检测工具"><a href="#2、代码质量检测工具" class="headerlink" title="2、代码质量检测工具"></a>2、代码质量检测工具</h3><p>JSLint（<a href="http://jslint.com" target="_blank" rel="noopener">http://jslint.com</a> ）是一个 JavaScript 代码质量检测工具。</p>
+<a id="more"></a>
+<h3 id="3、隐式全局变量与全局变量的区别？"><a href="#3、隐式全局变量与全局变量的区别？" class="headerlink" title="3、隐式全局变量与全局变量的区别？"></a>3、隐式全局变量与全局变量的区别？</h3><p>• 可以通过delete运算符删除。</p>
+<p>原因：<br>    隐式全局变量并不算是真正的变量，但他们是全局对象的属性成员。属性是可以通过delete运算符删除的，而变量不可以被删除。</p>
+<p>（注：在浏览器环境中，所有 JavaScript 代码都是在 window 作用域内的，所以在这种情况下，我们所说的全局变量其实都是 window 下的一个属性，故可以用 delete 删除，但在如 nodejs 或 gjs等非浏览器环境下，显式声明的全局变量无法用 delete 删除。）</p>
+<h3 id="4、javascript引擎的“变量提前”，工作过程是怎样的？"><a href="#4、javascript引擎的“变量提前”，工作过程是怎样的？" class="headerlink" title="4、javascript引擎的“变量提前”，工作过程是怎样的？"></a>4、javascript引擎的“变量提前”，工作过程是怎样的？</h3><p>分为两个阶段：<br>1、创建变量、函数和参数<br>    这一步是预编译的过程，它会扫描整段代码的上下文。<br>2、代码的运行<br>    这一阶段将创建函数表达式和一些非法的标识符（未声明的变量）。</p>
+<p>尽管“变量提前”这个概念并没有在 ECMAScript 标准中定义，但我们常常用它来解释预编译的行为过程。</p>
+<h3 id="5、HTMLCollection对象"><a href="#5、HTMLCollection对象" class="headerlink" title="5、HTMLCollection对象"></a>5、HTMLCollection对象</h3><p>HTMLCollection 是由 DOM 方法返回的对象，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByName()</span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName()</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName()</span><br></pre></td></tr></table></figure></p>
+<p>以及<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.images</span><br><span class="line"><span class="built_in">document</span>.links</span><br><span class="line"><span class="built_in">document</span>.forms</span><br><span class="line"><span class="built_in">document</span>.forms[<span class="number">0</span>].elements</span><br></pre></td></tr></table></figure></p>
+<p>HTMLCollection对象是文档中的活动对象。也就是说每次通过它们访问集合的 length 时，总是会去查询 DOM，而 DOM 操作则是很耗资源的。</p>
+<h3 id="6、数字转换？"><a href="#6、数字转换？" class="headerlink" title="6、数字转换？"></a>6、数字转换？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'5'</span>, <span class="number">10</span>);</span><br><span class="line">+<span class="string">"08"</span>;</span><br><span class="line"><span class="built_in">Number</span>(<span class="string">"08"</span>);</span><br></pre></td></tr></table></figure>
+<p>三者的区别：<br>1、后两种方法比parseInt()更快一些；<br>2、“08 hello”这类字符串转换为数字，则必须使用 parseInt()。</p>
+<p>原因：<br>parseInt()是一种“解析”而不是简单的“转换”。</p>
+</a>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/16/Vue-笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          Vue-笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/18/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">hexo 命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基本要点"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x4E00;&#x3001;&#x57FA;&#x672C;&#x8981;&#x70B9;" class="headerlink" title="&#x4E00;&#x3001;&#x57FA;&#x672C;&#x8981;&#x70B9;"></a>&#x4E00;&#x3001;&#x57FA;&#x672C;&#x8981;&#x70B9;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、对象的分类"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#1&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;" class="headerlink" title="1&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;"></a>1&#x3001;&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x7C7B;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、代码质量检测工具"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#2&#x3001;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;" class="headerlink" title="2&#x3001;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;"></a>2&#x3001;&#x4EE3;&#x7801;&#x8D28;&#x91CF;&#x68C0;&#x6D4B;&#x5DE5;&#x5177;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、隐式全局变量与全局变量的区别？"><span class="nav-number">1.3.</span> <span class="nav-text"><a href="#3&#x3001;&#x9690;&#x5F0F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x533A;&#x522B;&#xFF1F;" class="headerlink" title="3&#x3001;&#x9690;&#x5F0F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x533A;&#x522B;&#xFF1F;"></a>3&#x3001;&#x9690;&#x5F0F;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x4E0E;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x533A;&#x522B;&#xFF1F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、javascript引擎的“变量提前”，工作过程是怎样的？"><span class="nav-number">1.4.</span> <span class="nav-text"><a href="#4&#x3001;javascript&#x5F15;&#x64CE;&#x7684;&#x201C;&#x53D8;&#x91CF;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;" class="headerlink" title="4&#x3001;javascript&#x5F15;&#x64CE;&#x7684;&#x201C;&#x53D8;&#x91CF;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;"></a>4&#x3001;javascript&#x5F15;&#x64CE;&#x7684;&#x201C;&#x53D8;&#x91CF;&#x63D0;&#x524D;&#x201D;&#xFF0C;&#x5DE5;&#x4F5C;&#x8FC7;&#x7A0B;&#x662F;&#x600E;&#x6837;&#x7684;&#xFF1F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、HTMLCollection对象"><span class="nav-number">1.5.</span> <span class="nav-text"><a href="#5&#x3001;HTMLCollection&#x5BF9;&#x8C61;" class="headerlink" title="5&#x3001;HTMLCollection&#x5BF9;&#x8C61;"></a>5&#x3001;HTMLCollection&#x5BF9;&#x8C61;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、数字转换？"><span class="nav-number">1.6.</span> <span class="nav-text"><a href="#6&#x3001;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#xFF1F;" class="headerlink" title="6&#x3001;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#xFF1F;"></a>6&#x3001;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#xFF1F;</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2018 tataqiuqiu All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

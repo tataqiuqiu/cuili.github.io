@@ -413,12 +413,19 @@ object {
 	border: solid #333;
 	border-width: 1px 0 3px;
 	}
+
+@font-face {
+  font-family: "Fz 粗雅宋长尖体";
+  src: url("fonts/FangZhengMeiHei-GBK-1.ttf");
+}
 #main-navigation li a {
 	padding: 0 20px;
 	color: #333;
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
 	line-height: 50px;
 	letter-spacing: 1px;
+	font-size: 1.5em;
+	font-family: "Fz 粗雅宋长尖体", Oswald, "Microsoft Yahei", Arial, Helvetica, sans-serif;
 	}
 #main-navigation .sf-menu > ul > li:after {
 	width: 6px;
