@@ -11,19 +11,17 @@
   
   
   
-  <meta name="description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaS">
+  <meta name="description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaSc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript.patterns 设计模式 笔记">
 <meta property="og:url" content="http://yoursite.com/2018/01/04/JavaScript-patternss-阅读笔记/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaS">
+<meta property="og:description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaSc">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/01/04/JavaScript-patternss-阅读笔记/cover.jpg">
-<meta property="og:updated_time" content="2018-01-05T06:28:54.144Z">
+<meta property="og:updated_time" content="2018-01-17T10:56:50.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript.patterns 设计模式 笔记">
-<meta name="twitter:description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaS">
-<meta name="twitter:image" content="http://yoursite.com/2018/01/04/JavaScript-patternss-阅读笔记/cover.jpg">
+<meta name="twitter:description" content="一、基本要点1、对象的分类• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。 本地对象：• 内置对象（比如 Array，Date）；• 自定义对象（var o = {}）。 宿主对象包含window和所有DOM对象 2、代码质量检测工具JSLint（http://jslint.com ）是一个 JavaSc">
   
     <link rel="alternate" href="/atom.xml" title="" type="application/atom+xml">
   
@@ -139,8 +137,7 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <a class="fancybox" href="cover.jpg" title="书封面"><img src="cover.jpg" alt="书封面">
-<h2 id="一、基本要点"><a href="#一、基本要点" class="headerlink" title="一、基本要点"></a>一、基本要点</h2><h3 id="1、对象的分类"><a href="#1、对象的分类" class="headerlink" title="1、对象的分类"></a>1、对象的分类</h3><p>• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；<br>• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。</p>
+        <h2 id="一、基本要点"><a href="#一、基本要点" class="headerlink" title="一、基本要点"></a>一、基本要点</h2><h3 id="1、对象的分类"><a href="#1、对象的分类" class="headerlink" title="1、对象的分类"></a>1、对象的分类</h3><p>• 本地对象（Native）：由 ECMAScript 标准规范定义的对象；<br>• 宿主对象（Host）：由宿主环境创建的对象（比如浏览器环境）。</p>
 <p>本地对象：<br>• 内置对象（比如 Array，Date）；<br>• 自定义对象（var o = {}）。</p>
 <p>宿主对象包含window和所有DOM对象</p>
 <h3 id="2、代码质量检测工具"><a href="#2、代码质量检测工具" class="headerlink" title="2、代码质量检测工具"></a>2、代码质量检测工具</h3><p>JSLint（<a href="http://jslint.com" target="_blank" rel="noopener">http://jslint.com</a> ）是一个 JavaScript 代码质量检测工具。</p>
@@ -156,7 +153,7 @@
 <h3 id="6、数字转换？"><a href="#6、数字转换？" class="headerlink" title="6、数字转换？"></a>6、数字转换？</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'5'</span>, <span class="number">10</span>);</span><br><span class="line">+<span class="string">"08"</span>;</span><br><span class="line"><span class="built_in">Number</span>(<span class="string">"08"</span>);</span><br></pre></td></tr></table></figure>
 <p>三者的区别：<br>1、后两种方法比parseInt()更快一些；<br>2、“08 hello”这类字符串转换为数字，则必须使用 parseInt()。</p>
 <p>原因：<br>parseInt()是一种“解析”而不是简单的“转换”。</p>
-</a>
+
       
     </div>
     <footer class="entry-meta entry-footer">
@@ -205,7 +202,7 @@
     </a>
   
   
-    <a href="/2017/12/18/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/12/18/hexo-命令/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
       <div class="article-nav-title">hexo 命令</div>
     </a>
