@@ -4,23 +4,133 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2017/03/10/hello-world/"/>
-      <url>/2017/03/10/hello-world/</url>
+      <title>给github上的博客添加vue-cli搭建的demo</title>
+      <link href="/2019/08/05/%E7%BB%99github%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0vue-cli%E6%90%AD%E5%BB%BA%E7%9A%84demo/"/>
+      <url>/2019/08/05/%E7%BB%99github%E4%B8%8A%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0vue-cli%E6%90%AD%E5%BB%BA%E7%9A%84demo/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! <code>This</code> is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">640px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#f8f8f8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><div class="tip">    在ECMAScript 5的strict模式下，这种情况的`this`已经被规定不会指向全局对象了，而是`undefined`</div><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li></ul><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> <div id="gitalk-container"></div>     <script type="text/javascript">    var gitalk = new Gitalk({    // gitalk的主要参数      clientID: `60c65a59de1d329a02d6`,   //上面获取到的值      clientSecret: `cb40384ee5c4f2973f2832ecc52308753b26a9f2`,//上面获取到的值      repo: `blogComment`,  //您刚才建立仓库的名字      owner: 'tataqiuqiu',   //你的GitHub用户名字      admin: ['tataqiuqiu'],  //你的GitHub用户的名字      id: '1', //id不能重复，如果重复就会把其他页面的评论引进来        });      gitalk.render('gitalk-container');</script> ]]></content>
+        <content type="html"><![CDATA[<p>记录一下这个blog添加demo的过程</p><h2 id="一、创建一个新的github仓库。"><a href="#一、创建一个新的github仓库。" class="headerlink" title="一、创建一个新的github仓库。"></a>一、创建一个新的github仓库。</h2><h3 id="1、创建库，起名demos"><a href="#1、创建库，起名demos" class="headerlink" title="1、创建库，起名demos"></a>1、创建库，起名demos</h3><p><img src="/images/github%E6%96%B0%E5%BB%BA%E5%BA%93.png" alt></p><a id="more"></a><h3 id="2、打开settings"><a href="#2、打开settings" class="headerlink" title="2、打开settings"></a>2、打开settings</h3><p><img src="/images/github-settings.png" alt></p><h3 id="3、启用GitHub-Pages"><a href="#3、启用GitHub-Pages" class="headerlink" title="3、启用GitHub Pages"></a>3、启用GitHub Pages</h3><p><img src="/images/github%E5%BC%80%E5%90%AFpages.png" alt></p><h2 id="二、gitignore文件中-去掉-dist目录"><a href="#二、gitignore文件中-去掉-dist目录" class="headerlink" title="二、gitignore文件中 去掉/dist目录"></a>二、gitignore文件中 去掉/dist目录</h2><h2 id="三、vue-cli3-路径配置"><a href="#三、vue-cli3-路径配置" class="headerlink" title="三、vue-cli3 路径配置"></a>三、vue-cli3 路径配置</h2><h3 id="1、vue-config-js配置文件中的baseUrl改为相对路径。"><a href="#1、vue-config-js配置文件中的baseUrl改为相对路径。" class="headerlink" title="1、vue.config.js配置文件中的baseUrl改为相对路径。"></a>1、vue.config.js配置文件中的baseUrl改为相对路径。</h3><p>bulid后的文件静态资源引用就会以相对路径来引入了。<br>包括外链JS、css以及，html内的img标签。</p><p><img src="/images/vuecli3-config-baseurl.png" alt></p><h3 id="2、router路径更改"><a href="#2、router路径更改" class="headerlink" title="2、router路径更改"></a>2、router路径更改</h3><p>将base改为目标路径，跳转路由的位置就会以此为根目录进行跳转。</p><p><img src="/images/vuecli3-router-base.png" alt></p>]]></content>
       
       
       <categories>
           
-          <category> css </category>
+          <category> javascript </category>
+          
+          <category> vue </category>
+          
+          <category> vue-cli </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> css </tag>
+            <tag> vue-cli </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue父子组件双向绑定</title>
+      <link href="/2019/08/05/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/"/>
+      <url>/2019/08/05/vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1、sync修饰符（v2-3-0-新增）"><a href="#1、sync修饰符（v2-3-0-新增）" class="headerlink" title="1、sync修饰符（v2.3.0+ 新增）"></a>1、sync修饰符（v2.3.0+ 新增）</h3><p><a href="https://github.com/tataqiuqiu/demos/blob/master/vue/test/src/views/Bb.vue" target="_blank" rel="noopener">父组件代码</a>  </p><p><a href="https://github.com/tataqiuqiu/demos/blob/master/vue/test/src/components/Bb-child.vue" target="_blank" rel="noopener">子组件代码</a></p><h3 id="2、老版本"><a href="#2、老版本" class="headerlink" title="2、老版本"></a>2、老版本</h3><p><a href="https://github.com/tataqiuqiu/demos/blob/master/vue/test/src/views/Bb.2.vue" target="_blank" rel="noopener">父组件代码</a>  </p><p><a href="https://github.com/tataqiuqiu/demos/blob/master/vue/test/src/components/Bb-child.2.vue" target="_blank" rel="noopener">子组件代码</a></p><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+          <category> vue </category>
+          
+          <category> 组件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue-test-utils测试用例常用方法</title>
+      <link href="/2019/08/02/vue-test-utils%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+      <url>/2019/08/02/vue-test-utils%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>测试用例，代码自动化监测，codereview的第一步。是个不应被忽视的环节。</p><a id="more"></a><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mount &#125; <span class="keyword">from</span> <span class="string">'@vue/test-utils'</span></span><br><span class="line"><span class="keyword">import</span> test <span class="keyword">from</span> <span class="string">'../index'</span> <span class="comment">// 引入组件</span></span><br><span class="line"><span class="keyword">const</span> wrapper = mount(test, &#123;</span><br><span class="line">  <span class="comment">// 添加属性</span></span><br><span class="line">  propsData: &#123;</span><br><span class="line">    type: <span class="string">'type_1'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 添加插片</span></span><br><span class="line">  slots: &#123;</span><br><span class="line">    <span class="keyword">default</span>: <span class="string">'&lt;div class="test-msg"&gt;&lt;/div&gt;'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">const</span> vm = wrapper.vm <span class="comment">// 组件实例</span></span><br><span class="line"></span><br><span class="line">it(<span class="string">'类名是否正确'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> container = wrapper.find(<span class="string">'.container'</span>)</span><br><span class="line">  expect(container.contains(<span class="string">'.class_1'</span>)).toBe(<span class="literal">true</span>)</span><br><span class="line">  expect(container.classes(<span class="string">'class_2'</span>)).toBe(<span class="literal">true</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">it(<span class="string">'触发click事件'</span>, () =&gt; &#123;</span><br><span class="line">  wrapper.trigger(<span class="string">'click'</span>)</span><br><span class="line">  expect(wrapper.emitted().click).toBeTruthy()</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">it(<span class="string">'html内容检测'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> title = wrapper.find(<span class="string">'.title'</span>)</span><br><span class="line">  expect(title.text()).toBe(<span class="string">'标题'</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> img = vm.$el.querySelector(<span class="string">'.img'</span>)</span><br><span class="line">  expect(img.src).toBe(</span><br><span class="line">    <span class="string">'http://img'</span></span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">it(<span class="string">'样式检测'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> vm = vm.$el</span><br><span class="line">  expect(vm.style.width).toBe(<span class="string">'300px'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">it(<span class="string">'开启检测'</span>, () =&gt; &#123;</span><br><span class="line">  expect(wrapper.contains(<span class="string">'.detail'</span>)).toBe(<span class="literal">true</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">it(<span class="string">'插片位置是否正确'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> minor = wrapper.find(<span class="string">'.slot'</span>)</span><br><span class="line">  expect(minor.contains(<span class="string">'div.test-msg'</span>)).toBeTruthy()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue-test-utils </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo启动部署博客的命令</title>
+      <link href="/2019/08/02/hexo%E5%90%AF%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%91%BD%E4%BB%A4/"/>
+      <url>/2019/08/02/hexo%E5%90%AF%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>使用git bash工具</p><h2 id="本地目录"><a href="#本地目录" class="headerlink" title="本地目录"></a>本地目录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ e: 00aa/blog</span><br></pre></td></tr></table></figure><h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g </span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure><h2 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown参考</title>
+      <link href="/2019/08/02/markdown%E5%8F%82%E8%80%83/"/>
+      <url>/2019/08/02/markdown%E5%8F%82%E8%80%83/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! <code>This</code> is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><p><img src="/images/github%E6%96%B0%E5%BB%BA%E5%BA%93.png" alt></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (max-width: <span class="number">640px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#f8f8f8</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><div class="tip">    在ECMAScript 5的strict模式下，这种情况的`this`已经被规定不会指向全局对象了，而是`undefined`</div><ul><li><a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></li></ul><script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script><script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> <div id="gitalk-container"></div>     <script type="text/javascript">    var gitalk = new Gitalk({    // gitalk的主要参数      clientID: `60c65a59de1d329a02d6`,   //上面获取到的值      clientSecret: `cb40384ee5c4f2973f2832ecc52308753b26a9f2`,//上面获取到的值      repo: `blogComment`,  //您刚才建立仓库的名字      owner: 'tataqiuqiu',   //你的GitHub用户名字      admin: ['tataqiuqiu'],  //你的GitHub用户的名字      id: '1', //id不能重复，如果重复就会把其他页面的评论引进来        });      gitalk.render('gitalk-container');</script> ]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客相关 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> markdown </tag>
             
         </tags>
       

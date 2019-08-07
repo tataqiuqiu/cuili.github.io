@@ -629,7 +629,7 @@ pre {
 
 .highlight.cpp .code:after { content: 'C++'; }
 
-pre { color: #777; }
+pre { color: #777; max-height: 50vh;}
 
 pre .function .keyword,
 pre .constant { color: #0092db; }
