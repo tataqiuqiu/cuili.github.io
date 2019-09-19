@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://tataqiuqiu.github.io/"/>
-  <updated>2019-08-19T06:19:07.437Z</updated>
+  <updated>2019-09-19T10:11:04.179Z</updated>
   <id>https://tataqiuqiu.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览器渲染原理</title>
+    <link href="https://tataqiuqiu.github.io/2019/09/19/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/"/>
+    <id>https://tataqiuqiu.github.io/2019/09/19/浏览器渲染原理/</id>
+    <published>2019-09-19T10:00:00.000Z</published>
+    <updated>2019-09-19T10:11:04.179Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、现代web开发"><a href="#1、现代web开发" class="headerlink" title="1、现代web开发"></a>1、现代web开发</h3><p><img src="/images/browser/%E7%8E%B0%E4%BB%A3web%E5%BC%80%E5%8F%91.jpg" alt></p><a id="more"></a><h3 id="2、b-s系统架构图"><a href="#2、b-s系统架构图" class="headerlink" title="2、b-s系统架构图"></a>2、b-s系统架构图</h3><p><img src="/images/browser/b-s%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg" alt></p><h3 id="3、http协议是无状态协议"><a href="#3、http协议是无状态协议" class="headerlink" title="3、http协议是无状态协议"></a>3、http协议是无状态协议</h3><p><img src="/images/browser/http%E5%8D%8F%E8%AE%AE%E6%98%AF%E6%97%A0%E7%8A%B6%E6%80%81%E5%8D%8F%E8%AE%AE.jpg" alt></p><h3 id="4、TCP三次握手"><a href="#4、TCP三次握手" class="headerlink" title="4、TCP三次握手"></a>4、TCP三次握手</h3><p><img src="/images/browser/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.jpg" alt></p><h3 id="5、建立TCP连接"><a href="#5、建立TCP连接" class="headerlink" title="5、建立TCP连接"></a>5、建立TCP连接</h3><p><img src="/images/browser/%E5%BB%BA%E7%AB%8BTCP%E8%BF%9E%E6%8E%A5.jpg" alt></p><h3 id="6、dns查询过程原理"><a href="#6、dns查询过程原理" class="headerlink" title="6、dns查询过程原理"></a>6、dns查询过程原理</h3><p><img src="/images/browser/dns%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B%E5%8E%9F%E7%90%86.jpg" alt></p><h3 id="7、dns解析"><a href="#7、dns解析" class="headerlink" title="7、dns解析"></a>7、dns解析</h3><p><img src="/images/browser/dns%E8%A7%A3%E6%9E%90.jpg" alt></p><h3 id="8、完整HTTP请求过程"><a href="#8、完整HTTP请求过程" class="headerlink" title="8、完整HTTP请求过程"></a>8、完整HTTP请求过程</h3><p><img src="/images/browser/%E5%AE%8C%E6%95%B4HTTP%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B.jpg" alt></p><h3 id="9、浏览器缓存流程"><a href="#9、浏览器缓存流程" class="headerlink" title="9、浏览器缓存流程"></a>9、浏览器缓存流程</h3><p><img src="/images/browser/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%B5%81%E7%A8%8B.jpg" alt></p><h3 id="10、浏览器性能优化"><a href="#10、浏览器性能优化" class="headerlink" title="10、浏览器性能优化"></a>10、浏览器性能优化</h3><p><img src="/images/browser/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.jpg" alt></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;1、现代web开发&quot;&gt;&lt;a href=&quot;#1、现代web开发&quot; class=&quot;headerlink&quot; title=&quot;1、现代web开发&quot;&gt;&lt;/a&gt;1、现代web开发&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;/images/browser/%E7%8E%B0%E4%BB%A3web%E5%BC%80%E5%8F%91.jpg&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="浏览器" scheme="https://tataqiuqiu.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+      <category term="渲染原理" scheme="https://tataqiuqiu.github.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93%E5%8E%9F%E7%90%86/"/>
+    
+    
+      <category term="browser" scheme="https://tataqiuqiu.github.io/tags/browser/"/>
+    
+  </entry>
   
   <entry>
     <title>两行文字带省略号ellipsis</title>
